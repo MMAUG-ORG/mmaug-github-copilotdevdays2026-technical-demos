@@ -1,0 +1,74 @@
+name: Validate Session Starters
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate-session-01:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: sessions/01-every-workflow/starter
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest -q
+
+  validate-session-02:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate static starter files
+        run: |
+          test -f sessions/02-vscode-copilot/starter/web/index.html
+          test -f sessions/02-vscode-copilot/starter/web/styles.css
+          test -f sessions/02-vscode-copilot/starter/web/app.js
+
+  validate-session-03:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: sessions/03-agentic-workflows/starter
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run orchestrator
+        run: python orchestrator/main.py
+
+  validate-session-04:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: sessions/04-copilot-cli/starter
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate shell scripts
+        run: |
+          bash -n setup-demo-data.sh
+          bash -n analyze-demo-data.sh
+      - name: Execute demo scripts
+        run: |
+          chmod +x setup-demo-data.sh analyze-demo-data.sh
+          ./setup-demo-data.sh
+          ./analyze-demo-data.sh
+
+  validate-session-05:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: sessions/05-workshop-agent-lab-python
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate workshop bootstrap script syntax
+        run: bash -n bootstrap-agent-lab-python.sh

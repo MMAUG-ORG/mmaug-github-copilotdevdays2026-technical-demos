@@ -1,0 +1,36 @@
+name: Session 03 Challenge Submission
+description: Submit your work for Session 03 Agentic Workflows challenge.
+title: "[Session 03] Challenge submission: "
+labels: [session-03, self-paced-submission]
+body:
+  - type: markdown
+    attributes:
+      value: "Use this form to submit your Session 03 challenge work."
+  - type: input
+    id: participant
+    attributes:
+      label: Participant name
+      placeholder: Your full name
+    validations:
+      required: true
+  - type: input
+    id: challenge
+    attributes:
+      label: Challenge file
+      placeholder: sessions/03-agentic-workflows/challenges/01-challenge.md
+    validations:
+      required: true
+  - type: input
+    id: repo
+    attributes:
+      label: Repository or branch URL
+      placeholder: https://github.com/<user>/<repo>/tree/<branch>
+    validations:
+      required: true
+  - type: textarea
+    id: risk
+    attributes:
+      label: Risk and review notes
+      description: Describe your manual review gate and risk checks.
+    validations:
+      required: true

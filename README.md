@@ -23,6 +23,16 @@ This repository contains all technical demos for GitHub Copilot Dev Days Malta 2
 3. Complete Session 3 (Agentic Workflows).
 4. Finish the 1-hour workshop in Session 5.
 
+## Participant submissions
+
+- Open Issues and select the session challenge submission template.
+- Submit your repository, evidence, and implementation summary.
+
+## Automated validation
+
+- GitHub Actions workflow validates each session starter on push and pull request.
+- Workflow file: .github/workflows/validate-sessions.yml
+
 ## Publish target
 
 - GitHub organization: https://github.com/MMAUG-ORG

@@ -1,0 +1,35 @@
+name: Session 05 Workshop Submission
+description: Submit your work for the 1-hour workshop challenge.
+title: "[Session 05] Workshop submission: "
+labels: [session-05, self-paced-submission]
+body:
+  - type: markdown
+    attributes:
+      value: "Use this form to submit your Session 05 workshop work."
+  - type: input
+    id: participant
+    attributes:
+      label: Participant name
+      placeholder: Your full name
+    validations:
+      required: true
+  - type: input
+    id: workshop_repo
+    attributes:
+      label: Workshop branch or repo URL
+      placeholder: https://github.com/<user>/<repo>/tree/<branch>
+    validations:
+      required: true
+  - type: textarea
+    id: checkpoints
+    attributes:
+      label: Completed checkpoints
+      description: List which parts and checkpoints you completed.
+    validations:
+      required: true
+  - type: textarea
+    id: lessons
+    attributes:
+      label: Lessons learned
+    validations:
+      required: true

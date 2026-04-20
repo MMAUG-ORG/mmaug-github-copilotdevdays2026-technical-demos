@@ -1,0 +1,36 @@
+name: Session 04 Challenge Submission
+description: Submit your work for Session 04 Copilot CLI challenge.
+title: "[Session 04] Challenge submission: "
+labels: [session-04, self-paced-submission]
+body:
+  - type: markdown
+    attributes:
+      value: "Use this form to submit your Session 04 challenge work."
+  - type: input
+    id: participant
+    attributes:
+      label: Participant name
+      placeholder: Your full name
+    validations:
+      required: true
+  - type: input
+    id: challenge
+    attributes:
+      label: Challenge file
+      placeholder: sessions/04-copilot-cli/challenges/01-challenge.md
+    validations:
+      required: true
+  - type: input
+    id: script
+    attributes:
+      label: Script or PR URL
+      placeholder: https://github.com/<user>/<repo>/pull/<id>
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Safety checks implemented
+      description: List dry-run flags, help output, and guardrails.
+    validations:
+      required: true

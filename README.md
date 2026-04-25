@@ -40,4 +40,4 @@ This repository contains all technical demos for GitHub Copilot Dev Days Malta 2
 
 ## Contributors
 
-- Imoh Etuk (GitHub: https://github.com/imohweb)
+- Imoh Etuk (@imohweb) - https://github.com/imohweb

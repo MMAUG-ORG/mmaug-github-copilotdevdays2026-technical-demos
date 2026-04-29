@@ -31,7 +31,7 @@ def health() -> dict:
 def list_tasks(due_date: date | None = None, priority: str | None = None) -> List[Task]:
     results = TASKS
     if priority is not None:
-        results = [task for task in results if task.priority != priority]  # BUG: should be ==
+        results = [task for task in results if task.priority == priority]
     if due_date is not None:
         results = [task for task in results if task.due_date == due_date]
     return results
